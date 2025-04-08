@@ -1,0 +1,117 @@
+/* General Navbar Styling */
+header .navbar {
+  position: absolute;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+header .navbar.sticky {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
+  animation-name: stickyTransition;
+  animation-duration: 0.5s;
+
+  box-shadow: 0 2px 3px rgba(96, 96, 96, 0.1);
+}
+
+/* Logo Styling - Circular Logo */
+header .logo img {
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover; 
+
+}
+
+/* Navbar Items Styling */
+header .nav-link {
+  display: inline-flex;
+  justify-content: center;
+  color: var(--white);
+  padding: 0 1rem !important;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: var(--oswald-font);
+  text-transform: uppercase;
+  transition: all 0.15s ease-in-out;
+}
+
+header .sticky .nav-link {
+  color: var(--light-black); 
+}
+
+header .nav-link:hover {
+  color: #f5b507; 
+}
+
+/* Cart Icon Styling */
+header .cart {
+  position: relative;
+  top: 6.125px;
+}
+
+header .roundpoint {
+  width: 16px;
+  height: 16px;
+  background: var(--light-red);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+  font-style: normal;
+  position: absolute;
+  top: 3.2px;
+  right: -8px;
+}
+
+/* Media Query for Larger Screens (Up to 992px) */
+@media (max-width: 992px) {
+  header .navbar {
+    background-color: var(--white);
+  }
+  header .navbar-toggler {
+    border: none;
+  }
+  header .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  header .navbar-toggler-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  header .nav-link {
+    color: var(--light-black);
+    padding: 1rem !important;
+  }
+}
+
+/* Media Query for Smaller Screens (Up to 767px) */
+@media (max-width: 767px) {
+  /* Adjust Logo Size */
+  header .logo img {
+    max-width: 50px; /* Logo remains circular and smaller on mobile */
+    max-height: 50px;
+  }
+
+  /* Navbar Toggle Button (Hamburger Icon) */
+  header .navbar-toggler-icon {
+    background-color: var(--yellow); /* Change hamburger menu icon color */
+  }
+
+  /* Align Navbar Items Properly */
+  header .navbar-collapse {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Adjust Navbar Padding for Mobile */
+  header .nav-link {
+    padding: 0.8rem;
+  }
+}
